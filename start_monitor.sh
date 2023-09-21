@@ -90,7 +90,7 @@ if [ -z "$outfile" ];then
 fi
 
 # check logfile create permission
-touch $outfile 2>1 1>/dev/zero
+touch $outfile 2>&1 1>/dev/zero
 if [ $? -ne 0 ];then
        echo -e "\033[1;31m$outfile create failed, please check permission.\033[0m"
        exit 1
